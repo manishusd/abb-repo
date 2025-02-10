@@ -1,0 +1,17 @@
+> docker push abbacr.azurecr.io/node-crud-api:preview-1.0.2
+The push refers to repository [abbacr.azurecr.io/node-crud-api]
+0da9fbf60d48: Pushed
+84a8c1bd5887: Pushed
+04dccde934cf: Pushed
+b53ce1fd2746: Pushed
+73269890f6fd: Pushed
+7a803dc0b40f: Pushed
+ac7a63aeda32: Pushed
+76b8ef87096f: Pushed
+ad784f4e0bd6: Pushed
+abfcc8436e4e: Pushed
+2e2bafe8a0f4: Pushed
+eb0513792b7f: Pushed
+b800e94e7303: Pushed
+6496f68b4b07: Pushed
+preview-1.0.2: digest: sha256:516fa782f841cacbda60de8201c4355e1cd0ab8b9a1229a0eba5160382545048 size: 856

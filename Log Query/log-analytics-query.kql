@@ -1,0 +1,4 @@
+AppTraces
+| where SeverityLevel in (3)
+| where TimeGenerated >= ago(24h)
+| order by TimeGenerated desc

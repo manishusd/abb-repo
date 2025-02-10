@@ -1,0 +1,223 @@
+2025-02-10T09:58:01.8085020Z ##[section]Starting: Build and Push Docker Image
+2025-02-10T09:58:01.8090138Z ==============================================================================
+2025-02-10T09:58:01.8090269Z Task         : Docker
+2025-02-10T09:58:01.8090346Z Description  : Build or push Docker images, login or logout, start or stop containers, or run a Docker command
+2025-02-10T09:58:01.8090481Z Version      : 2.248.1
+2025-02-10T09:58:01.8090550Z Author       : Microsoft Corporation
+2025-02-10T09:58:01.8090643Z Help         : https://aka.ms/azpipes-docker-tsg
+2025-02-10T09:58:01.8090727Z ==============================================================================
+2025-02-10T09:58:07.3245197Z [command]/usr/bin/docker pull node:18-alpine
+2025-02-10T09:58:07.3245476Z 18-alpine: Pulling from library/node
+2025-02-10T09:58:07.3245721Z Digest: sha256:974afb6cbc0314dc6502b14243b8a39fbb2d04d975e9059dd066be3e274fbb25
+2025-02-10T09:58:07.3245975Z Status: Image is up to date for node:18-alpine
+2025-02-10T09:58:07.3246203Z docker.io/library/node:18-alpine
+2025-02-10T09:58:07.3248531Z [command]/usr/bin/docker inspect node:18-alpine
+2025-02-10T09:58:07.3248716Z [
+2025-02-10T09:58:07.3248850Z     {
+2025-02-10T09:58:07.3249057Z         "Id": "sha256:dcbf7b337595be6f4d214e4eed84f230eefe0e4ac03a50380d573e289b9e5e40",
+2025-02-10T09:58:07.3249278Z         "RepoTags": [
+2025-02-10T09:58:07.3249444Z             "node:18-alpine"
+2025-02-10T09:58:07.3249599Z         ],
+2025-02-10T09:58:07.3249750Z         "RepoDigests": [
+2025-02-10T09:58:07.3249974Z             "node@sha256:974afb6cbc0314dc6502b14243b8a39fbb2d04d975e9059dd066be3e274fbb25"
+2025-02-10T09:58:07.3250181Z         ],
+2025-02-10T09:58:07.3250593Z         "Parent": "",
+2025-02-10T09:58:07.3250769Z         "Comment": "buildkit.dockerfile.v0",
+2025-02-10T09:58:07.3250967Z         "Created": "2025-01-22T06:48:46Z",
+2025-02-10T09:58:07.3251150Z         "DockerVersion": "",
+2025-02-10T09:58:07.3251309Z         "Author": "",
+2025-02-10T09:58:07.3251462Z         "Config": {
+2025-02-10T09:58:07.3251651Z             "Hostname": "",
+2025-02-10T09:58:07.3251816Z             "Domainname": "",
+2025-02-10T09:58:07.3251973Z             "User": "",
+2025-02-10T09:58:07.3252132Z             "AttachStdin": false,
+2025-02-10T09:58:07.3252305Z             "AttachStdout": false,
+2025-02-10T09:58:07.3252477Z             "AttachStderr": false,
+2025-02-10T09:58:07.3252641Z             "Tty": false,
+2025-02-10T09:58:07.3252804Z             "OpenStdin": false,
+2025-02-10T09:58:07.3252967Z             "StdinOnce": false,
+2025-02-10T09:58:07.3253124Z             "Env": [
+2025-02-10T09:58:07.3253323Z                 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+2025-02-10T09:58:07.3253533Z                 "NODE_VERSION=18.20.6",
+2025-02-10T09:58:07.3253708Z                 "YARN_VERSION=1.22.22"
+2025-02-10T09:58:07.3253864Z             ],
+2025-02-10T09:58:07.3254011Z             "Cmd": [
+2025-02-10T09:58:07.3254158Z                 "node"
+2025-02-10T09:58:07.3254300Z             ],
+2025-02-10T09:58:07.3254452Z             "Image": "",
+2025-02-10T09:58:07.3254612Z             "Volumes": null,
+2025-02-10T09:58:07.3254772Z             "WorkingDir": "/",
+2025-02-10T09:58:07.3254932Z             "Entrypoint": [
+2025-02-10T09:58:07.3255349Z                 "docker-entrypoint.sh"
+2025-02-10T09:58:07.3255514Z             ],
+2025-02-10T09:58:07.3255664Z             "OnBuild": null,
+2025-02-10T09:58:07.3255824Z             "Labels": null
+2025-02-10T09:58:07.3255969Z         },
+2025-02-10T09:58:07.3256125Z         "Architecture": "amd64",
+2025-02-10T09:58:07.3256290Z         "Os": "linux",
+2025-02-10T09:58:07.3256451Z         "Size": 126941047,
+2025-02-10T09:58:07.3256616Z         "GraphDriver": {
+2025-02-10T09:58:07.3256770Z             "Data": {
+2025-02-10T09:58:07.3257154Z                 "LowerDir": "/var/lib/docker/overlay2/85c0720a3d523773b2f3aa0e407e9b2c6144e3179eea38a280d31f5572502cde/diff:/var/lib/docker/overlay2/7dfad2f6ba75d1883f909650389b11ec866a72b06967eeb6019aff5cd15d2dfb/diff:/var/lib/docker/overlay2/5bdecfe20d5afa5570f822db4442cef93c43b3096f035b5c394ad156d89b8398/diff",
+2025-02-10T09:58:07.3257959Z                 "MergedDir": "/var/lib/docker/overlay2/656ae41e7f998f3bc580cd10169548693a1d52f464e9a4a72d783c7d6bf179a4/merged",
+2025-02-10T09:58:07.3258293Z                 "UpperDir": "/var/lib/docker/overlay2/656ae41e7f998f3bc580cd10169548693a1d52f464e9a4a72d783c7d6bf179a4/diff",
+2025-02-10T09:58:07.3258723Z                 "WorkDir": "/var/lib/docker/overlay2/656ae41e7f998f3bc580cd10169548693a1d52f464e9a4a72d783c7d6bf179a4/work"
+2025-02-10T09:58:07.3258966Z             },
+2025-02-10T09:58:07.3259122Z             "Name": "overlay2"
+2025-02-10T09:58:07.3259275Z         },
+2025-02-10T09:58:07.3259539Z         "RootFS": {
+2025-02-10T09:58:07.3259702Z             "Type": "layers",
+2025-02-10T09:58:07.3259859Z             "Layers": [
+2025-02-10T09:58:07.3260079Z                 "sha256:a0904247e36a7726c03c71ee48f3e64462021c88dafeb13f37fdaf613b27f11c",
+2025-02-10T09:58:07.3260482Z                 "sha256:d561411347c1cd56280279b2f28678e4045eca1f38039cf2b546c729d39abc27",
+2025-02-10T09:58:07.3260765Z                 "sha256:8e0b3f8ca374aea722457504880d2d08efec2db3b4c7f0c2e83d483ea2d93ad5",
+2025-02-10T09:58:07.3261353Z                 "sha256:f3778221ab51c3b1950f19f35ee8a008dadf5615d92d3db825cf5ecdae2e8897"
+2025-02-10T09:58:07.3261562Z             ]
+2025-02-10T09:58:07.3261826Z         },
+2025-02-10T09:58:07.3261982Z         "Metadata": {
+2025-02-10T09:58:07.3262165Z             "LastTagTime": "0001-01-01T00:00:00Z"
+2025-02-10T09:58:07.3262336Z         }
+2025-02-10T09:58:07.3262591Z     }
+2025-02-10T09:58:07.3262730Z ]
+2025-02-10T09:58:07.3276530Z [command]/usr/bin/docker build -f /home/vsts/work/1/s/Dockerfile --label com.azure.dev.image.system.teamfoundationcollectionuri=https://dev.azure.com/Manish-Org-Abb/ --label com.azure.dev.image.system.teamproject=NODE-CRUD-API --label com.azure.dev.image.build.repository.name=node-crud-api --label com.azure.dev.image.build.sourceversion=666476b8ce16fea1e4e7132e974638318b5fa311 --label com.azure.dev.image.build.repository.uri=https://Manish-Org-Abb@dev.azure.com/Manish-Org-Abb/NODE-CRUD-API/_git/node-crud-api --label com.azure.dev.image.build.sourcebranchname=master --label com.azure.dev.image.build.definitionname=node-crud-api --label com.azure.dev.image.build.buildnumber=1.0.5 --label com.azure.dev.image.build.builduri=vstfs:///Build/Build/6 --label image.base.ref.name=node:18-alpine --label image.base.digest=sha256:974afb6cbc0314dc6502b14243b8a39fbb2d04d975e9059dd066be3e274fbb25 -t ***/node-crud-api:1.0.5 /home/vsts/work/1/s
+2025-02-10T09:58:07.3278379Z #0 building with "default" instance using docker driver
+2025-02-10T09:58:07.3278612Z 
+2025-02-10T09:58:07.3278808Z #1 [internal] load build definition from Dockerfile
+2025-02-10T09:58:07.3279012Z #1 transferring dockerfile: 338B done
+2025-02-10T09:58:07.3279184Z #1 DONE 0.0s
+2025-02-10T09:58:07.3279353Z 
+2025-02-10T09:58:07.3279561Z #2 [internal] load metadata for docker.io/library/node:18-alpine
+2025-02-10T09:58:07.3279757Z #2 DONE 0.0s
+2025-02-10T09:58:07.3279833Z 
+2025-02-10T09:58:07.3280092Z #3 [internal] load .dockerignore
+2025-02-10T09:58:07.3280294Z #3 transferring context: 102B done
+2025-02-10T09:58:07.3280464Z #3 DONE 0.0s
+2025-02-10T09:58:07.3280522Z 
+2025-02-10T09:58:07.3280701Z #4 [builder 1/5] FROM docker.io/library/node:18-alpine
+2025-02-10T09:58:07.3281006Z #4 DONE 0.0s
+2025-02-10T09:58:07.3281079Z 
+2025-02-10T09:58:07.3281235Z #5 [internal] load build context
+2025-02-10T09:58:08.6769475Z #5 transferring context: 238.63MB 1.9s done
+2025-02-10T09:58:08.9917542Z #5 DONE 2.2s
+2025-02-10T09:58:08.9917939Z 
+2025-02-10T09:58:08.9922214Z #6 [builder 2/5] WORKDIR /app
+2025-02-10T09:58:09.2470061Z #6 DONE 2.4s
+2025-02-10T09:58:09.3972873Z 
+2025-02-10T09:58:09.3973981Z #7 [builder 3/5] COPY package*.json ./
+2025-02-10T09:58:10.2476459Z #7 DONE 1.0s
+2025-02-10T09:58:10.3982629Z 
+2025-02-10T09:58:10.3983630Z #8 [builder 4/5] RUN npm i
+2025-02-10T09:58:17.5238012Z #8 7.279 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-02-10T09:58:17.6291928Z #8 7.384 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-02-10T09:58:18.6759054Z #8 8.011 npm warn deprecated superagent@8.1.2: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
+2025-02-10T09:58:19.6736223Z #8 8.685 
+2025-02-10T09:58:19.6738513Z #8 8.685 added 390 packages, and audited 391 packages in 6s
+2025-02-10T09:58:19.6738767Z #8 8.686 
+2025-02-10T09:58:19.6739125Z #8 8.686 50 packages are looking for funding
+2025-02-10T09:58:19.6739371Z #8 8.686   run `npm fund` for details
+2025-02-10T09:58:19.6739636Z #8 8.688 
+2025-02-10T09:58:19.6739857Z #8 8.688 found 0 vulnerabilities
+2025-02-10T09:58:19.6740136Z #8 8.690 npm notice
+2025-02-10T09:58:19.6740402Z #8 8.690 npm notice New major version of npm available! 10.8.2 -> 11.1.0
+2025-02-10T09:58:19.6740765Z #8 8.690 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.1.0
+2025-02-10T09:58:19.6741117Z #8 8.690 npm notice To update run: npm install -g npm@11.1.0
+2025-02-10T09:58:19.6741362Z #8 8.690 npm notice
+2025-02-10T09:58:19.6741547Z #8 DONE 8.9s
+2025-02-10T09:58:19.6741633Z 
+2025-02-10T09:58:19.6741796Z #9 [builder 5/5] COPY . .
+2025-02-10T09:58:20.2668087Z #9 DONE 1.1s
+2025-02-10T09:58:21.0659772Z 
+2025-02-10T09:58:21.0660855Z #10 [stage-1 3/5] COPY --from=builder /app/package*.json ./
+2025-02-10T09:58:21.3096317Z #10 DONE 0.1s
+2025-02-10T09:58:21.3096847Z 
+2025-02-10T09:58:21.3097346Z #11 [stage-1 4/5] COPY --from=builder /app/src ./src
+2025-02-10T09:58:21.3097698Z #11 DONE 0.0s
+2025-02-10T09:58:21.3097901Z 
+2025-02-10T09:58:21.3098228Z #12 [stage-1 5/5] RUN npm i --only=production
+2025-02-10T09:58:21.5277431Z #12 0.369 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+2025-02-10T09:58:24.3745039Z #12 3.216 
+2025-02-10T09:58:24.3745558Z #12 3.216 added 82 packages, and audited 83 packages in 3s
+2025-02-10T09:58:24.5512228Z #12 3.216 
+2025-02-10T09:58:24.5512497Z #12 3.216 14 packages are looking for funding
+2025-02-10T09:58:24.5512697Z #12 3.216   run `npm fund` for details
+2025-02-10T09:58:24.5512867Z #12 3.218 
+2025-02-10T09:58:24.5513035Z #12 3.218 found 0 vulnerabilities
+2025-02-10T09:58:24.5513213Z #12 3.220 npm notice
+2025-02-10T09:58:24.5513452Z #12 3.220 npm notice New major version of npm available! 10.8.2 -> 11.1.0
+2025-02-10T09:58:24.5513708Z #12 3.220 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.1.0
+2025-02-10T09:58:24.5513947Z #12 3.220 npm notice To update run: npm install -g npm@11.1.0
+2025-02-10T09:58:24.5514143Z #12 3.220 npm notice
+2025-02-10T09:58:24.5514302Z #12 DONE 3.2s
+2025-02-10T09:58:24.5514372Z 
+2025-02-10T09:58:24.5514530Z #13 exporting to image
+2025-02-10T09:58:24.5514697Z #13 exporting layers
+2025-02-10T09:58:25.0803480Z #13 exporting layers 0.7s done
+2025-02-10T09:58:25.0804183Z #13 writing image sha256:b6691ac02eda5a25b0b5c64c52643da4c539f68fd0a2b07815288d75a811370b
+2025-02-10T09:58:25.1062385Z #13 writing image sha256:b6691ac02eda5a25b0b5c64c52643da4c539f68fd0a2b07815288d75a811370b done
+2025-02-10T09:58:25.1062997Z #13 naming to ***/node-crud-api:1.0.5 done
+2025-02-10T09:58:25.1063203Z #13 DONE 0.7s
+2025-02-10T09:58:25.1099640Z 
+2025-02-10T09:58:25.1139973Z ##[warning]No data was written into the file /home/vsts/work/_temp/task_outputs/build_1739181505111.txt
+2025-02-10T09:58:25.1154703Z [command]/usr/bin/docker images
+2025-02-10T09:58:25.4458946Z [command]/usr/bin/docker push ***/node-crud-api:1.0.5
+2025-02-10T09:58:25.4459251Z REPOSITORY                        TAG         IMAGE ID       CREATED         SIZE
+2025-02-10T09:58:25.4459497Z ***/node-crud-api   1.0.5       b6691ac02eda   1 second ago    131MB
+2025-02-10T09:58:25.4460262Z node                              18-alpine   dcbf7b337595   2 weeks ago     127MB
+2025-02-10T09:58:25.4460475Z node                              22          6a24a51ebbc3   2 weeks ago     1.12GB
+2025-02-10T09:58:25.4460679Z node                              20          b3f3806dee10   2 weeks ago     1.1GB
+2025-02-10T09:58:25.4460888Z node                              20-alpine   f97665f3387c   2 weeks ago     133MB
+2025-02-10T09:58:25.4461098Z node                              18          c0d22c846dfb   2 weeks ago     1.09GB
+2025-02-10T09:58:25.4461309Z node                              22-alpine   ea96bbf1ccf0   2 weeks ago     158MB
+2025-02-10T09:58:25.4461543Z moby/buildkit                     latest      23b5a9d195cf   2 weeks ago     208MB
+2025-02-10T09:58:25.4461757Z debian                            11          b3224714157d   4 weeks ago     124MB
+2025-02-10T09:58:25.4461965Z alpine                            3.19        37668a5f6667   4 weeks ago     7.39MB
+2025-02-10T09:58:25.4462178Z alpine                            3.18        221b68f97ccb   4 weeks ago     7.35MB
+2025-02-10T09:58:25.4462388Z ubuntu                            20.04       6013ae1a63c2   4 months ago    72.8MB
+2025-02-10T09:58:25.4462601Z ubuntu                            22.04       97271d29cb79   5 months ago    77.9MB
+2025-02-10T09:58:25.4462812Z alpine                            3.17        775f483016a7   5 months ago    7.08MB
+2025-02-10T09:58:25.4463021Z debian                            10          69530eaa9e7e   8 months ago    115MB
+2025-02-10T09:58:25.4463243Z alpine                            3.16        d49a5025be10   12 months ago   5.54MB
+2025-02-10T09:58:25.4463434Z 
+2025-02-10T09:58:25.4464130Z The push refers to repository [***/node-crud-api]
+2025-02-10T09:58:25.9348513Z 8e2ca7d3e76e: Preparing
+2025-02-10T09:58:25.9348777Z ae79bb47ff86: Preparing
+2025-02-10T09:58:25.9348980Z c3f4d0961058: Preparing
+2025-02-10T09:58:25.9349180Z 568498f2e687: Preparing
+2025-02-10T09:58:25.9349400Z f3778221ab51: Preparing
+2025-02-10T09:58:25.9349599Z 8e0b3f8ca374: Preparing
+2025-02-10T09:58:25.9349794Z d561411347c1: Preparing
+2025-02-10T09:58:25.9349991Z a0904247e36a: Preparing
+2025-02-10T09:58:25.9357405Z 8e0b3f8ca374: Waiting
+2025-02-10T09:58:25.9361579Z d561411347c1: Waiting
+2025-02-10T09:58:25.9370106Z a0904247e36a: Waiting
+2025-02-10T09:58:27.2237066Z f3778221ab51: Layer already exists
+2025-02-10T09:58:27.8873278Z 8e0b3f8ca374: Layer already exists
+2025-02-10T09:58:28.6877054Z d561411347c1: Layer already exists
+2025-02-10T09:58:29.6887823Z 568498f2e687: Pushed
+2025-02-10T09:58:29.6888079Z ae79bb47ff86: Pushed
+2025-02-10T09:58:29.6888311Z a0904247e36a: Layer already exists
+2025-02-10T09:58:29.6888524Z c3f4d0961058: Pushed
+2025-02-10T09:58:30.6884110Z 8e2ca7d3e76e: Pushed
+2025-02-10T09:58:34.4208423Z 1.0.5: digest: sha256:20c55cd0273ec147fe57263c7708da13c88c88052fdd7c147341b0187f8eef2b size: 1992
+2025-02-10T09:58:34.4236549Z 
+2025-02-10T09:58:34.4265627Z [command]/usr/bin/docker history --format createdAt:{{.CreatedAt}}; layerSize:{{.Size}}; createdBy:{{.CreatedBy}}; layerId:{{.ID}} --no-trunc ***/node-crud-api:1.0.5
+2025-02-10T09:58:34.4786940Z createdAt:2025-02-10T09:58:24Z; layerSize:0B; createdBy:CMD ["node" "src/server.js"]; layerId:sha256:b6691ac02eda5a25b0b5c64c52643da4c539f68fd0a2b07815288d75a811370b
+2025-02-10T09:58:34.4787951Z createdAt:2025-02-10T09:58:24Z; layerSize:0B; createdBy:EXPOSE map[3000/tcp:{}]; layerId:<missing>
+2025-02-10T09:58:34.4788431Z createdAt:2025-02-10T09:58:24Z; layerSize:4.23MB; createdBy:RUN /bin/sh -c npm i --only=production # buildkit; layerId:<missing>
+2025-02-10T09:58:34.4788905Z createdAt:2025-02-10T09:58:21Z; layerSize:4.97kB; createdBy:COPY /app/src ./src # buildkit; layerId:<missing>
+2025-02-10T09:58:34.4789333Z createdAt:2025-02-10T09:58:21Z; layerSize:175kB; createdBy:COPY /app/package*.json ./ # buildkit; layerId:<missing>
+2025-02-10T09:58:34.4789756Z createdAt:2025-02-10T09:58:09Z; layerSize:0B; createdBy:WORKDIR /app; layerId:<missing>
+2025-02-10T09:58:34.4790432Z createdAt:2025-01-22T06:48:46Z; layerSize:0B; createdBy:CMD ["node"]; layerId:<missing>
+2025-02-10T09:58:34.4790831Z createdAt:2025-01-22T06:48:46Z; layerSize:0B; createdBy:ENTRYPOINT ["docker-entrypoint.sh"]; layerId:<missing>
+2025-02-10T09:58:34.4791265Z createdAt:2025-01-22T06:48:46Z; layerSize:388B; createdBy:COPY docker-entrypoint.sh /usr/local/bin/ # buildkit; layerId:<missing>
+2025-02-10T09:58:34.4792447Z createdAt:2025-01-22T06:48:46Z; layerSize:5.37MB; createdBy:RUN /bin/sh -c apk add --no-cache --virtual .build-deps-yarn curl gnupg tar   && export GNUPGHOME="$(mktemp -d)"   && for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;   done   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz"   && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc"   && gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && gpgconf --kill all   && rm -rf "$GNUPGHOME"   && mkdir -p /opt   && tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz   && apk del .build-deps-yarn   && yarn --version   && rm -rf /tmp/* # buildkit; layerId:<missing>
+2025-02-10T09:58:34.4793617Z createdAt:2025-01-22T06:48:46Z; layerSize:0B; createdBy:ENV YARN_VERSION=1.22.22; layerId:<missing>
+2025-02-10T09:58:34.4796274Z createdAt:2025-01-22T06:48:46Z; layerSize:114MB; createdBy:RUN /bin/sh -c addgroup -g 1000 node     && adduser -u 1000 -G node -s /bin/sh -D node     && apk add --no-cache         libstdc++     && apk add --no-cache --virtual .build-deps         curl     && ARCH= OPENSSL_ARCH='linux*' && alpineArch="$(apk --print-arch)"       && case "${alpineArch##*-}" in         x86_64) ARCH='x64' CHECKSUM="9919b24d4b9973cdd99c5b630ba3d5adc1b71c8f5471fd7a394539451f7e370e" OPENSSL_ARCH=linux-x86_64;;         x86) OPENSSL_ARCH=linux-elf;;         aarch64) OPENSSL_ARCH=linux-aarch64;;         arm*) OPENSSL_ARCH=linux-armv4;;         ppc64le) OPENSSL_ARCH=linux-ppc64le;;         s390x) OPENSSL_ARCH=linux-s390x;;         *) ;;       esac   && if [ -n "${CHECKSUM}" ]; then     set -eu;     curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz";     echo "$CHECKSUM  node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" | sha256sum -c -       && tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner       && ln -s /usr/local/bin/node /usr/local/bin/nodejs;   else     echo "Building from source"     && apk add --no-cache --virtual .build-deps-full         binutils-gold         g++         gcc         gnupg         libgcc         linux-headers         make         python3         py-setuptools     && export GNUPGHOME="$(mktemp -d)"     && for key in       C0D6248439F1D5604AAFFB4021D900FFDB233756       DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7       CC68F5A3106FF448322E48ED27F5E38D5B0A215F       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A       A363A499291CBBC940DD62E41F10027AF002F8B0     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ;     done     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz"     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc"     && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -     && tar -xf "node-v$NODE_VERSION.tar.xz"     && cd "node-v$NODE_VERSION"     && ./configure     && make -j$(getconf _NPROCESSORS_ONLN) V=     && make install     && apk del .build-deps-full     && cd ..     && rm -Rf "node-v$NODE_VERSION"     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt;   fi   && rm -f "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz"   && find /usr/local/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "$OPENSSL_ARCH" -exec rm -rf {} \;   && apk del .build-deps   && node --version   && npm --version # buildkit; layerId:<missing>
+2025-02-10T09:58:34.4798713Z createdAt:2025-01-22T06:48:46Z; layerSize:0B; createdBy:ENV NODE_VERSION=18.20.6; layerId:<missing>
+2025-02-10T09:58:34.4799111Z createdAt:2025-01-08T12:07:30Z; layerSize:0B; createdBy:CMD ["/bin/sh"]; layerId:<missing>
+2025-02-10T09:58:34.4799532Z createdAt:2025-01-08T12:07:30Z; layerSize:7.83MB; createdBy:ADD alpine-minirootfs-3.21.2-x86_64.tar.gz / # buildkit; layerId:<missing>
+2025-02-10T09:58:34.4818944Z 
+2025-02-10T09:58:34.4835246Z [command]/usr/bin/docker inspect b6691ac02eda5a25b0b5c64c52643da4c539f68fd0a2b07815288d75a811370b -f {{.RootFS.Layers}}
+2025-02-10T09:58:34.5032725Z [sha256:a0904247e36a7726c03c71ee48f3e64462021c88dafeb13f37fdaf613b27f11c sha256:d561411347c1cd56280279b2f28678e4045eca1f38039cf2b546c729d39abc27 sha256:8e0b3f8ca374aea722457504880d2d08efec2db3b4c7f0c2e83d483ea2d93ad5 sha256:f3778221ab51c3b1950f19f35ee8a008dadf5615d92d3db825cf5ecdae2e8897 sha256:568498f2e687882f4740946fa584abadf037e138666631d2cb3a30d44abe055b sha256:c3f4d0961058ffb361b4a6dbae89142488a0afcd26e35c0c492bb7d9572c7005 sha256:ae79bb47ff86db847691feae79cbda4104515a953925a31d474b595cf11b1ef7 sha256:8e2ca7d3e76e9d7b172439a44a76ffd32e37c5617786004ac5996359fe134c70]
+2025-02-10T09:58:34.5049574Z 
+2025-02-10T09:58:34.5608703Z ##[section]Finishing: Build and Push Docker Image

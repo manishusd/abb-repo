@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-crud-api
+  namespace: platform-dev
+  labels:
+    app: node-crud-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-crud-api
+  template:
+    metadata:
+      labels:
+        app: node-crud-api
+    spec:
+      containers:
+      - name: node-crud-api
+        image: abbacr.azurecr.io/node-crud-api:1.0.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "dev"
+        livenessProbe:
+          httpGet:
+            path: /health/liveness
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /health/readiness
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10

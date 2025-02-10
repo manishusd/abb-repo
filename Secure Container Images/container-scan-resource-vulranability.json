@@ -1,0 +1,96 @@
+[
+  {
+    "additionalData": {
+      "ImageId": "abbacr.azurecr.io/node-crud-api@sha256:9db4d4646f2994ef1a1b21f1e6bb63728398b3cecf9da653bb1a5b8271fec5ac",
+      "maxCvss30Score": "9.8",
+      "subAssessmentsLink": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:9db4d4646f2994ef1a1b21f1e6bb63728398b3cecf9da653bb1a5b8271fec5ac/providers/Microsoft.Security/assessments/33422d8f-ab1e-42be-bc9a-38685bb567b9/subAssessments"
+    },
+    "displayName": "[Preview] Container images in Azure registry should have vulnerability findings resolved",
+    "id": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:9db4d4646f2994ef1a1b21f1e6bb63728398b3cecf9da653bb1a5b8271fec5ac/providers/Microsoft.Security/assessments/33422d8f-ab1e-42be-bc9a-38685bb567b9",
+    "links": null,
+    "metadata": null,
+    "name": "33422d8f-ab1e-42be-bc9a-38685bb567b9",
+    "partnersData": null,
+    "resourceDetails": {
+      "Id": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:9db4d4646f2994ef1a1b21f1e6bb63728398b3cecf9da653bb1a5b8271fec5ac",
+      "NativeResourceId": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:9db4d4646f2994ef1a1b21f1e6bb63728398b3cecf9da653bb1a5b8271fec5ac",
+      "ResourceId": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:9db4d4646f2994ef1a1b21f1e6bb63728398b3cecf9da653bb1a5b8271fec5ac",
+      "ResourceName": "node-crud-api",
+      "ResourceProvider": "acr",
+      "ResourceType": "acr.containerimage",
+      "Source": "Azure",
+      "source": null
+    },
+    "resourceGroup": "abb-aks-rg",
+    "status": {
+      "cause": null,
+      "code": "Unhealthy",
+      "description": null,
+      "firstEvaluationDate": "2025-02-10T06:12:05.805405+00:00",
+      "statusChangeDate": "2025-02-10T06:12:05.805405+00:00"
+    },
+    "type": "Microsoft.Security/assessments"
+  },
+  {
+    "additionalData": {
+      "ImageId": "abbacr.azurecr.io/node-crud-api@sha256:11387a8005fa3394808207ec10d83fe46a9171b4a4b12a78cbe08e0d0b49befc",
+      "subAssessmentsLink": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:11387a8005fa3394808207ec10d83fe46a9171b4a4b12a78cbe08e0d0b49befc/providers/Microsoft.Security/assessments/33422d8f-ab1e-42be-bc9a-38685bb567b9/subAssessments"
+    },
+    "displayName": "[Preview] Container images in Azure registry should have vulnerability findings resolved",
+    "id": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:11387a8005fa3394808207ec10d83fe46a9171b4a4b12a78cbe08e0d0b49befc/providers/Microsoft.Security/assessments/33422d8f-ab1e-42be-bc9a-38685bb567b9",
+    "links": null,
+    "metadata": null,
+    "name": "33422d8f-ab1e-42be-bc9a-38685bb567b9",
+    "partnersData": null,
+    "resourceDetails": {
+      "Id": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:11387a8005fa3394808207ec10d83fe46a9171b4a4b12a78cbe08e0d0b49befc",
+      "NativeResourceId": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:11387a8005fa3394808207ec10d83fe46a9171b4a4b12a78cbe08e0d0b49befc",
+      "ResourceId": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/securityentitydata/repositories-node-crud-api-images-sha256:11387a8005fa3394808207ec10d83fe46a9171b4a4b12a78cbe08e0d0b49befc",
+      "ResourceName": "node-crud-api",
+      "ResourceProvider": "acr",
+      "ResourceType": "acr.containerimage",
+      "Source": "Azure",
+      "source": null
+    },
+    "resourceGroup": "abb-aks-rg",
+    "status": {
+      "cause": "LayerMediaTypeNotSupported",
+      "code": "NotApplicable",
+      "description": "At least one of the image layers has an unsupported media type",
+      "firstEvaluationDate": "2025-02-10T06:10:03.056977+00:00",
+      "statusChangeDate": "2025-02-10T06:10:03.056977+00:00"
+    },
+    "type": "Microsoft.Security/assessments"
+  },
+  {
+    "additionalData": {
+      "maxCvss30Score": "9.8",
+      "subAssessmentsLink": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/providers/Microsoft.Security/assessments/c0b7cfc6-3172-465a-b378-53c7ff2cc0d5/subAssessments"
+    },
+    "displayName": "Azure registry container images should have vulnerabilities resolved",
+    "id": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr/providers/Microsoft.Security/assessments/c0b7cfc6-3172-465a-b378-53c7ff2cc0d5",
+    "links": null,
+    "metadata": null,
+    "name": "c0b7cfc6-3172-465a-b378-53c7ff2cc0d5",
+    "partnersData": null,
+    "resourceDetails": {
+      "Id": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr",
+      "NativeResourceId": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr",
+      "ResourceId": "/subscriptions/813f6f95-133a-45a4-822a-3b1bccebb96f/resourceGroups/abb-aks-rg/providers/Microsoft.ContainerRegistry/registries/abbacr",
+      "ResourceName": "abbacr",
+      "ResourceProvider": "Microsoft.ContainerRegistry",
+      "ResourceType": "microsoft.containerregistry/registries",
+      "Source": "Azure",
+      "source": null
+    },
+    "resourceGroup": "abb-aks-rg",
+    "status": {
+      "cause": null,
+      "code": "Unhealthy",
+      "description": null,
+      "firstEvaluationDate": "2025-02-10T06:11:03.150921+00:00",
+      "statusChangeDate": "2025-02-10T06:12:06.309962+00:00"
+    },
+    "type": "Microsoft.Security/assessments"
+  }
+]

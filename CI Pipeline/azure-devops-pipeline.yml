@@ -1,0 +1,96 @@
+name: '$(majorMinorVersion)$(Rev:.r)'
+
+trigger:
+  branches:
+    include:
+    - master
+    - Release/*
+resources:
+- repo: self
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  imageTag: '$(tag)'
+  imageName: "node-crud-api"
+  dockerRegistryServiceConnection: "dockerRegistryServiceConnection"
+  containerRegistry: "abbacr.azurecr.io"
+  helmChartPath: "./helm"
+  sonarQubeServiceConnection: "sonarqube-service-connection"
+  sonarProjectKey: "sonarqube-project-key"
+  sonarProjectName: "node-crud-api"
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildAndTest
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: "18.x"
+            displayName: "Install Node.js"
+
+          - script: |
+              npm ci
+            displayName: "Install Dependencies"
+
+          - task: SonarQubePrepare@5
+            inputs:
+              SonarQube: "$(sonarQubeServiceConnection)"
+              scannerMode: "CLI"
+              configMode: "manual"
+              cliProjectKey: "$(sonarProjectKey)"
+              cliProjectName: "$(sonarProjectName)"
+              cliSources: "."
+            displayName: "Prepare SonarQube Analysis"
+
+          - script: |
+              npm run test:ci
+            displayName: "Run Tests"
+
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: "JUnit"
+              testResultsFiles: "junit.xml"
+              mergeTestResults: true
+              testRunTitle: "Unit Tests"
+            displayName: "Publish Test Results"
+
+          - task: PublishCodeCoverageResults@1
+            inputs:
+              codeCoverageTool: "Cobertura"
+              summaryFileLocation: "$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml"
+              reportDirectory: "$(System.DefaultWorkingDirectory)/coverage"
+            displayName: "Publish Code Coverage"
+
+          - task: SonarQubeAnalyze@5
+            displayName: "Run SonarQube Analysis"
+
+          - task: SonarQubePublish@5
+            inputs:
+              pollingTimeoutSec: "300"
+            displayName: "Publish SonarQube Results"
+
+          - task: Docker@2
+            inputs:
+              containerRegistry: "$(dockerRegistryServiceConnection)"
+              repository: "$(imageName)"
+              command: "buildAndPush"
+              Dockerfile: "**/Dockerfile"
+              tags: '$(imageTag)'
+            displayName: "Build and Push Docker Image"
+
+          - task: CopyFiles@2
+            displayName: Copy files
+            inputs:
+              contents: |
+                **/helm/**
+              targetFolder: $(Build.ArtifactStagingDirectory)
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+              ArtifactName: "drop"
+            displayName: "Publish Helm Chart"
+
