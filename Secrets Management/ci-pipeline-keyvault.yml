@@ -1,0 +1,78 @@
+name: '$(majorMinorVersion)$(Rev:.r)'
+
+trigger:
+  branches:
+    include:
+      - master
+      - Release/*
+
+resources:
+  - repo: self
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  imageTag: '$(tag)'
+  # imageName: "node-crud-api"
+  dockerRegistryServiceConnection: "dockerRegistryServiceConnection"
+  helmChartPath: "./helm"
+  sonarQubeServiceConnection: "your-sonarqube-service-connection"
+  sonarProjectKey: "your-sonarqube-project-key"
+  sonarProjectName: "node-crud-api"
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildAndTest
+        steps:
+          - task: AzureKeyVault@2
+            inputs:
+              azureSubscription: "dev-arm-sc"
+              KeyVaultName: "abb-keyvault"
+              SecretsFilter: '*'
+              RunAsPreJob: true
+            displayName: "Fetch Secrets from Azure Key Vault"
+
+          - task: NodeTool@0
+            inputs:
+              versionSpec: "18.x"
+            displayName: "Install Node.js"
+
+          - script: |
+              npm ci
+            displayName: "Install Dependencies"
+
+          - script: |
+              npm run test:ci
+            displayName: "Run Tests"
+
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: "JUnit"
+              testResultsFiles: "junit.xml"
+              mergeTestResults: true
+              testRunTitle: "Unit Tests"
+            displayName: "Publish Test Results"
+
+          - task: Docker@2
+            inputs:
+              containerRegistry: "$(dockerRegistryServiceConnection)"
+              repository: "$(imageName)"
+              command: "buildAndPush"
+              Dockerfile: "**/Dockerfile"
+              tags: '$(imageTag)'
+            displayName: "Build and Push Docker Image"
+
+          - task: CopyFiles@2
+            displayName: Copy files
+            inputs:
+              contents: |
+                **/helm/**
+              targetFolder: $(Build.ArtifactStagingDirectory)
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+              ArtifactName: "drop"
+            displayName: "Publish Helm Chart"
