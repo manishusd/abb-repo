@@ -1,1 +1,0 @@
-No advisor recommendations have been triggered yet for cost optimization of any resource. I have Created resources to create this scenarioby deploying unused public IPs and disks.
